@@ -15,10 +15,10 @@ t = time.time()
 level.mesh_collider.collider = 'mesh'
 level.mesh_collider.visible = False
 
-level.water.color = color.color(160,1,.8,.5)
+level.water.color = color.hsv(160,1,.8,.5)
 level.water.enabled = False
-Entity(model='plane', position=level.water.position, scale=9999, color=color.color(160,1,.8,.5), double_sided=True)
-scene.fog_color = color.color(6, .1, .85)
+Entity(model='plane', position=level.water.position, scale=9999, color=color.hsv(160,1,.8,.5), double_sided=True)
+scene.fog_color = color.hsv(6, .1, .85)
 
 
 level.chest.collider = 'box'
@@ -133,8 +133,8 @@ def input(key):
 orginal_chest_color = level.chest.color
 def update():
     if not level.bow.enabled and mouse.hovered_entity in (level.chest, level.chest_lid) and distance_xz(player.position, level.chest.position) < 6:
-        level.chest.color = color.color(90, .4, .8)
-        level.chest_lid.color = color.color(90, .4, .8)
+        level.chest.color = color.hsv(90, .4, .8)
+        level.chest_lid.color = color.hsv(90, .4, .8)
     else:
         level.chest.color = orginal_chest_color
         level.chest_lid.color = orginal_chest_color
